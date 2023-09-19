@@ -93,10 +93,7 @@ The most important of all these decompositions is the Singular Value Decompositi
 
 The SVD is a factorization, when input matrix $`M_{n \times m}`$ is decomposed into:
 
-```math
-M_{n \times m} = U_{n \times r} \Sigma_{r \times r} V_{m \times r}^T, \\
-r = min(n, m)
-```
+[latex] - `M_{n \times m}=U_{n \times r}\Sigma_{r \times r}V_{m \times r}^T, \text{ where } r =\min (n, m)`
 
 where
 * *U* and *V* are orthogonal matrices, 
@@ -114,13 +111,10 @@ The crucial property of this decomposition is that using SVD we can get the k-ra
 matrix. Let me explain what this means:
 * Matrices *U* and *V* contains left and right eigenvectors, matrix $`\Sigma`$ contains singular values
 * If we crop *U*, *V*, $`\Sigma`$ and take first k eigenvectors with corresponding singular values and multiply cropped matrices
-$`U_{n \times k} \Sigma_{k \times k} V_{m \times k}^T = M_{n \times m}^k`$ the resulted matrix $`M_{n \times m}^k`$ will have the rank k and the same shape as matrix *M*. 
-* Thus we can calculate how similar the elements of both matrices are. To calculate their similarity we will use the Frobenius norm. And this property said that out of all possible approximation with rank k, $`M_{n \times m}^k`$ will be the best (in terms of Frobenius norm)
+[latex] - `U_{n \times k}\Sigma_{k \times k}V_{m \times k}^T = M_{n \times m}^k` the resulted matrix [latex] - `M_{n \times m}^k` will have the rank k and the same shape as matrix *M*. 
+* Thus we can calculate how similar the elements of both matrices are. To calculate their similarity we will use the Frobenius norm. And this property said that out of all possible approximation with rank k, [latex] - `M_{n \times m}^k` will be the best (in terms of Frobenius norm)
 
-```math
-M_{n \times m}^k = arg_{\bar M: rank(\bar M)=k} min || M - \bar M ||_F = \\
-= arg_{\bar M: rank(\bar M)=k} min \sqrt {\sum_{i, j}(M_{ij} - \bar M_{ij})^2}
-```
+[latex] - `M_{n \times m}^k = \arg \min_{\bar{M}: \text{rank}(\bar{M})=k} \|M - \bar{M}\|_F = \arg \min_{\bar{M}: \text{rank}(\bar{M})=k} \sqrt{\sum_{i,j}\left(M_{ij}-\bar{M_{ij}}\right)^2}`
 
 Ok, we got some properties, but how can we use SVD for dimensionality reduction? 
 Basically, we can just use $`U_k`$ if we wish to compress a high dimensional matrix, and that is it. 
@@ -170,9 +164,7 @@ And then we convert this distance into a probability, so that the sum of the pro
 then we have built an excellent compressed representation. 
 To measure this distance, there is a special loss that measures the similarity of distributions. 
 This loss is called the Kullback-Leiber divergence: <br/>
-```math
-D_{KL}(P||Q)=\sum_{i=1}^p p_i log{{p_i}\over{q_i}}
-```
+[latex] - `D_{KL}(P\|Q)=\sum_{i=1}^n p_i \log \frac{p_i}{q_i}`
 5. Now, since we have a loss, we can calculate the gradient and update the sample vector in the compressed representation. 
 By repeating 2-5 steps many times the approach will converge to a solution that will tend to minimize the distance 
 between distributions 
