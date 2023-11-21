@@ -262,4 +262,4 @@ Your repository should contain one or several notebooks with your solutions.
 * Using [face expression recognition dataset](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset) fit the dimensionality reduction model to compress faces. Using representations try to make a sad face smiley and vice versa.
 
 
-💡 [Tap here](https://forms.yandex.ru/cloud/646b476102848f2ee1031b24/) **to leave your feedback on the project**. Pedago Team really tries to make your educational experience better.
+>Please leave feedback on the project in the [feedback form.](https://forms.yandex.ru/cloud/646b476102848f2ee1031b24/) 
