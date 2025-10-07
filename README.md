@@ -186,7 +186,7 @@ Consists of several videos from street cameras. We only need one of them in bmc_
    4. Build linear and random forest models to predict user age based on user-book interactions. Do not forget to choose optimal parameters.
    5. Use PCA and UMAP to reduce the dimensionality of the features.
    6. Build linear model and random forest model on the compressed features.
-   7. Compare fitting time and quality for models from d and f.
+   7. Compare fitting time and quality for models from iv and vi.
 
 3. Visualizations
    1. Load the MNIST dataset ([source](http://yann.lecun.com/exdb/mnist/)).
