@@ -8,7 +8,7 @@ Summary: This project covers some unsupervised learning tasks, focusing on dimen
 
 1. [Chapter I. Preamble](#chapter-i-preamble)
 2. [Chapter II. Introduction](#chapter-ii-introduction) \
-    2.1. [What is Dimentional reduction](#what-is-dimensional-reduction) \
+    2.1. [What is Dimensional Reduction](#what-is-dimensional-reduction) \
     2.2. [Matrix Factorization methods](#matrix-factorization-methods) \
     2.3. [Manifold learning](#manifold-learning) 
 3. [Chapter III. Goal](#chapter-iii-goal) 
@@ -189,7 +189,7 @@ Consists of several videos from street cameras. We only need one of them in bmc_
    7. Compare fitting time and quality for models from iv and vi.
 
 3. Visualizations
-   1. Load the MNIST dataset ([source](http://yann.lecun.com/exdb/mnist/)).
+   1. Load the MNIST dataset ([source](https://www.kaggle.com/datasets/hojjatk/mnist-dataset)).
    2. Represent each digit image as a vector.
    3. Transform vectors up to 2 dimensions using PCA, SVD, Randomized-SVD, TSNE, UMAP, and LLE.
    4. Propose metrics and compare models based on how well they separate digit classes.
@@ -207,7 +207,7 @@ Consists of several videos from street cameras. We only need one of them in bmc_
    
 ### Submission
 
-Save one of the models from the "Visualizations" part of the task. Your peer will load it and use it to compress one of the handwritten digits. The compressed vector should have the same values.
+Save one of the models from the "Visualizations" part of the task. Your peer will load it and use it to compress one of the handwritten digits. The compressed vector should have the same values. Prepare code snippet that demonstate how to load, how to apply and what results should be.
 
 Your repository should contain one or more notebooks with your solutions.
 
