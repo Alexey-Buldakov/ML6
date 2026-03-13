@@ -32,7 +32,7 @@ Where a, b, and c are the parameters that we iterate through along the given gri
 This problem is closely related to the Curse of Dimensionality, first introduced by Richard E. Bellman. 
 As we add and add new features (in other words, increase the dimension), we need n times more observations each time to get the same density of observations (see the figure below). Thus, in order to obtain an estimate of an unknown function as accurate as before, the amount of data required must grow exponentially with increasing dimension.
 
-![](misc/images/preamble.png)
+![preamble](misc/images/preamble.png)
 
 Source: [What do you mean by Curse of Dimensionality? What are the different ways to deal with it?](https://www.i2tutorials.com/what-do-you-mean-by-curse-of-dimensionality-what-are-the-different-ways-to-deal-with-it/)
 
@@ -54,7 +54,7 @@ The purpose of the current project is to introduce you to a number of approaches
 
 In the case of dimensionality reduction, our main goal is to transform data from a high-dimensional feature space to a low-dimensional feature space. This is done in such a way that information about the important properties of the samples is not lost: similar samples should remain similar and different samples should be different. Most often, this approach is used to visualize datasets in two- or three-dimensional space (see the figure below) or to speed up the training of other machine learning models.
 
-![Dimensional Reduction](misc/images/dimensionality_reduction.png)
+![dimensional_reduction](misc/images/dimensionality_reduction.png)
 
 Image of dimensionality reduction of handwritten numbers from the MNIST dataset. 
 Source: https://neptune.ai/blog/dimensionality-reduction
@@ -77,7 +77,7 @@ where
 
 Recall that orthogonal matrices are just rotations and reflections that leave the sphere the same. From a geometric point of view, this means that any matrix can be decomposed as a rotation, followed by an extension, followed by another rotation.
 
-![](misc/images/rotation.png)
+![rotation](misc/images/rotation.png)
 
 Source: [wikipedia](https://en.wikipedia.org/wiki/Singular_value_decomposition)
 
@@ -85,7 +85,9 @@ The key property of this decomposition is that we can use SVD to find the k-rank
 matrix. Let me explain what that means:
 * The matrices *U* and *V* contain the left and right eigenvectors, the matrix $`\Sigma`$ contains the singular values.
 * If we crop *U*, *V*, $`\Sigma`$ and take first k eigenvectors with corresponding singular values and multiply cropped matrices
+
 $$ U_{n \times k}\Sigma_{k \times k}V_{m \times k}^T = M_{n \times m}^k $$ the resulting matrix $$ M_{n \times m}^k $$ will have rank k and the same shape as the matrix *M*. 
+
 * Thus we can calculate how similar the elements of the two matrices are. To calculate their similarity, we will use the Frobenius norm. And this property says that out of all possible approximations with rank k, $$ M_{n \times m}^k $$ will be the best (in terms of Frobenius norm).
 
 $$M_{n \times m}^k = \arg \min_{\bar{M}: \text{rank}(\bar{M})=k} \|M - \bar{M}\|_F = \arg \min_{\bar{M}: \text{rank}(\bar{M})=k} \sqrt{\sum_{i,j}\left(M_{ij}-\bar{M_{ij}}\right)^2}$$
@@ -97,7 +99,7 @@ And the above property will guarantee us that this will be the best approximatio
 
 Another important property of SVD is that the first right eigenvector (from the matrix V) will cover the direction where the variance of our sample will have the maximum value (see the gif below, you can also visit the source link for a better example). What does this mean? If we take the left eigenvector as a new axis and then project all the samples onto it, we get the sequence of values. If we then calculate the variance of this sequence, it will be the maximum of all possible variants. In other words, this direction explains our data most effectively. And what about the second eigenvector? It will represent the direction with the best correction to our first eigenvector. And so on.
 
-![](misc/images/stats.gif)
+![stats](misc/images/stats.gif)
 
 Source: [stats.stackexchange.com](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579) 
 
@@ -124,7 +126,9 @@ We will try to explain how it works on the fingers:
 2. Second, in high-dimensional space, we count the distance between all possible pairs of our observations. And then we convert this distance into a probability, so that the sum of the probabilities to all other points equals 1 (use softmax for this).
 3. At the same time, we repeat the distance measurement in low-dimensional space.
 4. Let's take 1 observation. If the probability distributions to every other point are similar in both spaces, then we have built an excellent compressed representation. To measure this distance, there is a special loss that measures the similarity of the distributions. This loss is called the Kullback-Leiber divergence: <br/>
+
 $$ D_{KL}(P\|Q)=\sum_{i=1}^n p_i \log \frac{p_i}{q_i}$$
+
 5. Now that we have a loss, we can calculate the gradient and update the sample vector in the compressed representation. By repeating steps 2-5 many times, the approach will converge to a solution that tends to minimize the distance between the distributions. 
 
 It is worth mentioning that for better convergence, instead of using random vectors in the 1st step, it is better to use some pre-trained compression. PCA is often used to generate starting points for algorithms. Coupled with the fact that t-SNE requires a lot of computational resources, this can save on computation.
@@ -163,7 +167,7 @@ Source: http://yann.lecun.com/exdb/mnist/
 
 "Hello world" dataset for handwriting digit recognition. Many libraries have built-in tools to load this dataset.
 
-![](misc/images/mnist.png)
+![mnist](misc/images/mnist.png)
 
 #### Background models challenge
 
