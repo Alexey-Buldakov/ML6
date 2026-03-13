@@ -1,4 +1,4 @@
-# Unsupervised Learning <br/> Dimensionality Reduction
+# Unsupervised Learning, Dimensionality Reduction
 
 Summary: This project covers some unsupervised learning tasks, focusing on dimensionality reduction.
 
