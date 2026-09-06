@@ -1,1 +1,6 @@
 data/Book_Recommendation/Books.csv
+# Фотографии для Task 4
+data/Images/
+
+# Датасет лиц для Bonus
+data/Face_Expression_Recognition/
